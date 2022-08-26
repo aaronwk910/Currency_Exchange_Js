@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import Dropdowns from './components/interface.js';
+import InputBar from './components/InputBar.js';
+
+class App extends Component {
+  state = {
+    currency: 'USD',
+    currency2: 'EUR',
+    amount1: '3',
+    amount2: '4',
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Dropdowns />
+        <InputBar />
+      </React.Fragment>
+    );
+  }
 }
+
 
 export default App;
