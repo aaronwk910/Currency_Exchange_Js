@@ -1,40 +1,59 @@
 import React, { useState } from 'react';
-import Dropdowns from './interface.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import Dropdowns from './Dropdowns.js';
 import InputBar from './InputBar.js';
 import OutputBar from './OutputBar.js';
 import Calculate from './Calculate.js';
 
 const Parent = () => {
 
-    const [currency1, setCurrency1] = useState("EUR");
-    const [currency2, setCurrency2] = useState("USD");
-    const [input, setInput] = useState("");
+    const [currency1, setCurrency1] = useState("USD");
+    const [currency2, setCurrency2] = useState("EUR");
+    const [input, setInput] = useState("0");
     const [output, setOutput] = useState("0");
 
     return (
-        <React.Fragment>
-            <Dropdowns
-                setCurrency1={setCurrency1}
-                setCurrency2={setCurrency2}
-                currency1={currency1}
-                currency2={currency2}
-            />
-            <InputBar
-                setInput={setInput}
-            />
+        <Container>
+            <Row>
+                <Col>
+                    Select Input Currency!
+                </Col>
 
-            <Calculate
-                input={input}
-                currency1={currency1}
-                currency2={currency2}
-                setOutput={setOutput}
-            />
+                <Col>
+                    Select Output Currency!
+                </Col>
+            </Row>
+            <Row>
+                <Dropdowns
+                    setCurrency1={setCurrency1}
+                    setCurrency2={setCurrency2}
+                    currency1={currency1}
+                    currency2={currency2}
+                />
+            </Row>
+            <Row>
+                <Col>
+                    <InputBar
+                        setInput={setInput}
+                    />
+                </Col>
+                    <Calculate
+                        input={input}
+                        currency1={currency1}
+                        currency2={currency2}
+                        setOutput={setOutput}
+                    />
+                <Col>
+                    <OutputBar
+                        output={output}
+                    />
+                </Col>
+            </Row>
 
-            <OutputBar
-                output={output}
-            />
-
-        </React.Fragment>
+        </Container>
     );
 }
 

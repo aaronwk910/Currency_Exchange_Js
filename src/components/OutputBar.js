@@ -6,7 +6,4 @@ const OutputBar = props => {
         );
 }
 
-
-
- 
 export default OutputBar;

@@ -8,5 +8,4 @@ const InputBar = props => {
     );
 }
 
-
 export default InputBar;
