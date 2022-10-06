@@ -9,13 +9,14 @@ import OutputBar from './OutputBar.js';
 import Calculate from './Calculate.js';
 
 const Parent = () => {
-
+//set the initial state of the currency dropdowns and the input/output bars
     const [currency1, setCurrency1] = useState("USD");
     const [currency2, setCurrency2] = useState("EUR");
     const [input, setInput] = useState("0");
     const [output, setOutput] = useState("0");
 
     return (
+        //create the layout of the page
         <Container>
             <Row>
                 <Col>

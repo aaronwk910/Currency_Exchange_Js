@@ -1,0 +1,37 @@
+GET http://localhost:5000/rates?from=USD
+
+###
+
+POST http://localhost:5000/rates
+Content-Type: application/json
+
+{
+    "from": "EUR",
+    "to": "EUR",
+    "multiplier": 1
+}
+
+###
+
+
+GET http://localhost:5000/rates/633e33e12aff5964766ff47a
+
+###
+
+DELETE http://localhost:5000/rates/633e33e12aff5964766ff47a
+
+###
+PATCH http://localhost:5000/rates/633e38b20dcf1b98b5457e8e
+Content-Type: application/json
+
+{
+    "multiplier": 1.012
+}
+
+###
+
+GET http://localhost:5000/rates/633e4b410f0309789176b3c8
+
+###
+
+GET http://localhost:5000/rates/USD/EUR
